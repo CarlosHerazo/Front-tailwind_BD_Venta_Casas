@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <title>Prestige Properties</title>
+  </head>
+
+  <body>
+    <header class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between border-b border-slate-200 dark:border-slate-700 dark:bg-slate-900 py-3.5 px-4 sm:px-6 lg:px-8 dark:text-slate-100 dark:border-slate-800 border-b">
+      <button id="menu-toggle" class="block sm:hidden text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 focus:outline-none ml-4">
+          <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+              <path fill-rule="evenodd" d="M3 5h18a1 1 0 0 1 0 2H3a1 1 0 1 1 0-2zm0 6h18a1 1 0 0 1 0 2H3a1 1 0 1 1 0-2zm0 6h18a1 1 0 0 1 0 2H3a1 1 0 1 1 0-2z"/>
+          </svg>
+      </button>
+      <h1 class="text-2xl font-bold hidden sm:block">
+          <a href="" class="text-slate-900 dark:text-slate-100 dark:hover:text-slate-400">
+              Prestige Properties <i class="fa-solid fa-house"></i>
+          </a>
+      </h1>
+      <nav id="menu" class="hidden sm:flex flex-grow justify-end">
+        <div class="sidebar bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-100 w-64 h-full fixed top-0 left-0 transition duration-300 transform -translate-x-full ease-in-out">
+          <div class="flex justify-between items-center px-4 py-3">
+            <h1 class="text-1xl font-bold  sm:block">
+              <a href="" class="text-slate-200 dark:text-slate-100 dark:hover:text-slate-400">
+                  Prestige Properties 
+              </a>
+              
+          </h1>
+          <button id="close-menu" class="dark:hover:text-gray-100 focus:outline-none">
+            <i class="fas fa-x"></i>
+          </button>
+          </div>
+          <div class="flex justify-between items-center px-4 py-3">
+                <h2 class="text-lg font-semibold">Menú</h2>
+                
+            </div>
+           
+            <div class="main-sliderbar">
+                <ul class="main-menu">
+                    <li>
+                        <a href="{{ url_for('index') }}">
+                            <i class="fas fa-door-open"></i>
+                            <span>INICIO</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('promociones') }}">
+                            <i class="fas fa-tags"></i>
+                            <span>PROMOCIONES</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('planes') }}">
+                            <i class="fas fa-clipboard-list"></i>
+                            <span>MEMBRESIAS</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('clientes') }}">
+                            <i class="fas fa-users "></i>
+                            <span>CLIENTES</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="main-otros">
+                    <li>
+                        <a href="{{ url_for('quienes_somos') }}">
+                            <i class="fas fa-users-cog"></i>
+                            <span>¿QUIENES SOMOS?</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('contactenos') }}">
+                            <i class="fas fa-info-circle"></i>
+                            <span>CONTACTENOS</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+  </header>
+  
+  
+  
+    <div class="content-todo">
+      <div class="sidebar bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-100 hidden sm:block">
+        <div class="main-sliderbar">
+          <ul class="main-menu">
+            <h4>Menu</h4>
+            <li>
+              <a href="{{ url_for('index') }}">
+                <i class="fas fa-door-open"></i>
+                <span>INICIO</span>
+              </a>
+            </li>
+            <li>
+              <a href="{{ url_for('promociones') }}">
+                <i class="fas fa-tags"></i>
+                <span>PROMOCIONES</span>
+              </a>
+            </li>
+            <li>
+              <a href="{{ url_for('planes') }}">
+                <i class="fas fa-clipboard-list"></i>
+                <span>MEMBRESIAS</span>
+              </a>
+            </li>
+            <li>
+                <a href="{{ url_for('clientes') }}">
+                <i class="fas fa-users "></i>
+                <span>CLIENTES</span>
+              </a>
+            </li>
+          </ul>
+          <ul class="main-otros">
+            <h4>Otros</h4>
+            <li>
+                <a href="{{ url_for('quienes_somos') }}">
+                <i class="fas fa-users-cog"></i>
+                <span>¿QUIENES SOMOS?</span>
+              </a>
+            </li>
+            <li>
+              <a href="{{ url_for('contactenos') }}">
+                <i class="fas fa-info-circle"></i>
+                <span>CONTACTENOS</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      {% block contenido %}
+
+
+      
+      {% endblock %}
+    </div>
+    <!-- Script para manejar el carrusel -->
+    <script src="{{ url_for('static', filename='js/carrusel.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/menu.js') }}"></script>
+  </body>
+</html>

@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block contenido %}
+
+<!--LAYAUT-->
+<!--LAYAUT-->
+
+    <div class=" w-full">
+        <div class="flex flex-col lg:flex-row sm:justify-between items-center bg-slate-90 dark:bg-slate-900 shadow-lg">
+            <div class="text-center sm:text-left lg:w-1/2 p-8">
+                <h1 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">Promociones Exclusivas</h1>
+                <p class="mt-4 text-xl text-white">Descubre nuestras promociones especiales en viviendas de lujo. ¡No te lo pierdas!</p>
+            </div>
+    
+            <div class="lg:w-1/2">
+                <img src="{{ url_for('static', filename='img/casa_3.jpg') }}" alt="Imagen de promoción" width="500" class="w-full lg:mx-0 shadow-lg">
+            </div>
+        </div>
+        <!-- 2 -->
+        <div class="flex flex-col lg:flex-row sm:justify-between items-center bg-white shadow-lg mt-6">
+            <div class="text-center sm:text-left lg:w-1/2 p-8">
+                <h1 class="text-4xl font-bold tracking-tight text-grey-900 sm:text-6xl">Promociones Exclusivas</h1>
+                <p class="mt-4 text-xl text-grey-300">Descubre nuestras promociones especiales en viviendas de lujo. ¡No te lo pierdas!</p>
+                <div class="mt-4 col-start-1 row-start-3 self-center sm:mt-0 sm:col-start-2 sm:row-start-2 sm:row-span-2 lg:mt-6 lg:col-start-1 lg:row-start-3 lg:row-end-4">
+                    <a href="{{ url_for('detalles') }}"  class="bg-indigo-600 text-white text-sm leading-6 font-medium py-2 px-10 rounded-lg">Ver detalles</a>
+                  </div>
+            </div>
+    
+            <div class="lg:w-1/2">
+                <img src="{{ url_for('static', filename='img/casa_4.jpg') }}" alt="Imagen de promoción" width="500" class="w-full lg:mx-0 shadow-lg">
+            </div>
+
+        </div>
+        <!-- 3 -->
+        
+        <div class="flex flex-col lg:flex-row sm:justify-between items-center bg-slate-90  dark:bg-slate-900 shadow-lg">
+            
+    
+            <div class="lg:w-1/2">
+                <img src="{{ url_for('static', filename='img/casa_7.avif') }}" alt="Imagen de promoción" width="500" class="w-full lg:mx-0 shadow-lg">
+            </div>
+            <div class="text-center sm:text-left lg:w-1/2 p-8">
+                <h1 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">Promociones Exclusivas</h1>
+                <p class="mt-4 text-xl text-white">Descubre nuestras promociones especiales en viviendas de lujo. ¡No te lo pierdas!</p>
+                <div class="mt-4 col-start-1 row-start-3 self-center sm:mt-0 sm:col-start-2 sm:row-start-2 sm:row-span-2 lg:mt-6 lg:col-start-1 lg:row-start-3 lg:row-end-4">
+                    <a href="{{ url_for('detalles') }}"  class="bg-indigo-600 text-white text-sm leading-6 font-medium py-2 px-10 rounded-lg">Ver detalles</a>
+                  </div>
+            </div>
+        </div>
+        <!-- 4 -->
+        
+        <div class="flex flex-col lg:flex-row sm:justify-between items-center bg-white shadow-lg  mb-6">
+            
+
+            <div class="text-center sm:text-left lg:w-1/2 p-8">
+                <h1 class="text-4xl font-bold tracking-tight text-grey-900 sm:text-6xl">Promociones Exclusivas</h1>
+                <p class="mt-4 text-xl text-grey-300">Descubre nuestras promociones especiales en viviendas de lujo. ¡No te lo pierdas!</p>
+                <div class="mt-4 col-start-1 row-start-3 self-center sm:mt-0 sm:col-start-2 sm:row-start-2 sm:row-span-2 lg:mt-6 lg:col-start-1 lg:row-start-3 lg:row-end-4">
+                    <a href="{{ url_for('detalles') }}" type="button" class="bg-indigo-600 text-white text-sm leading-6 font-medium py-2 px-10 rounded-lg">Ver detalles</a>
+                  </div>
+            </div>
+            <div class="lg:w-1/2">
+                <img src="{{ url_for('static', filename='img/casa_6.avif') }}" alt="Imagen de promoción" width="500" class="w-full lg:mx-0 shadow-lg">
+            </div>
+        </div>
+        {% include "footer/footer.html" %}
+    </div>
+    
+
+
+
+
+{% endblock %}

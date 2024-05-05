@@ -1,0 +1,75 @@
+body {
+    padding-top: 60px; /* Altura del header */
+}
+header  {
+    z-index: 1000;
+}
+.sidebar {
+    position: sticky;
+    top: 60px; /* Alinea con la parte inferior del header */
+    left: 0;
+    bottom: 0;
+    width: 110px;
+    height: calc(100vh - 60px); /* Resta la altura del header al 100% del viewport */
+    padding: 0 1.7rem;
+    overflow: hidden;
+    transition: all 0.5s linear;
+    border-right:  1px solid rgba(153, 153, 153, 0.2);
+    z-index: 1000;
+}
+
+.content-todo {
+    display: flex;
+}
+
+
+
+.sidebar:hover {
+    width: 285px;
+    transition: 0.5s;
+}
+
+.main-sliderbar {
+    margin-top: 30px;
+}
+
+.main-menu,
+.main-otros {
+    height: 88%;
+    position: relative;
+    list-style: none;
+    padding: 0;
+}
+
+.main-menu li,
+.main-otros li {
+    padding: 1rem;
+    margin: 8px 0;
+    border-radius: 8px;
+}
+
+.main-menu li:hover,
+.main-otros li:hover {
+    background-color:rgba(79, 70, 229, 0.1);
+    
+    /* 0.5 es el valor alfa, donde 0 es completamente transparente y 1 es completamente opaco */
+    cursor: pointer;
+}
+
+.main-menu a,
+.main-otros a {
+    font-size: 14px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.fas {
+    font-size: 1.2rem;
+}
+
+.main-menu a span,
+.main-otros a span {
+    overflow: hidden;
+}

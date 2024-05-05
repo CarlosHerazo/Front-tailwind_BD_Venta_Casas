@@ -1,0 +1,159 @@
+{% extends 'layout.html' %}
+
+{% block contenido %}
+  <div class="content w-full bg-gray-100 dark:bg-slate-900">
+    <section id="default-carousel" class="relative w-full" data-carousel="slide">
+      <!-- Carousel wrapper -->
+      <div class="relative h-56 overflow-hidden md:h-96">
+        <!-- Item 3 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          <img src="{{ url_for('static', filename='img/casa_2.jpg') }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
+        </div>
+        <!-- Item 4 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          <img src="{{ url_for('static', filename='img/casa_7.avif') }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
+        </div>
+        <!-- Item 5 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          <img src="{{ url_for('static', filename='img/casa_3.jpg') }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
+        </div>
+      </div>
+
+      <div class="absolute left-100 right-0 top-100 bottom-0 flex flex flex-col gap-4 p-4">
+        <h2 class="text-2xl font-bold text-white dark:text-slate-100 text-4xl">Bienvenido a Mobiliaria</h2>
+        <p class="text-sm leading-4 font-medium text-white dark:text-slate-400">Casas en ventas y alquiler para todo el mundo, en Moviliaria</p>
+        <a href="{{ url_for('promociones') }}"  class="bg-indigo-600 text-white text-sm leading-6 font-medium py-2 px-3">Reserva ahora</a>
+      </div>
+    </section>
+
+    <section class="bg-slate-50 py-6 px-4 sm:p-6 md:py-10 md:px-8 2xl:py-20 2xl:px-24 dark:bg-slate-900">
+      <div class="max-w-4xl mx-auto grid grid-cols-1 lg:max-w-5xl lg:gap-x-20 lg:grid-cols-2">
+        <div class="relative p-3 col-start-1 row-start-1 flex flex-col-reverse rounded-lg bg-gradient-to-t from-black/75 via-black/0 sm:bg-none sm:row-start-2 sm:p-0 lg:row-start-1">
+          <h1 class="mt-1 text-lg font-semibold text-white sm:text-slate-900 md:text-2xl dark:sm:text-white">Casas con hermosas vistas!</h1>
+          <p class="text-sm leading-4 font-medium text-white sm:text-slate-500 dark:sm:text-slate-400 color-indigo-600">5 cuartos · 3 baños · 1 cocina · 2 piscinas</p>
+        </div>
+        <div class="grid gap-4 col-start-1 col-end-3 row-start-1 sm:mb-6 sm:grid-cols-4 lg:gap-6 lg:col-start-2 lg:row-end-6 lg:row-span-6 lg:mb-0">
+          <img src="{{ url_for('static', filename='img/casa_1.avif') }}" alt="" class="w-full h-60 object-cover rounded-lg sm:h-52 sm:col-span-2 lg:col-span-full" loading="lazy" />
+          <img src="{{ url_for('static', filename='img/casa_2.jpg') }}" alt="" class="hidden w-full h-52 object-cover rounded-lg sm:block sm:col-span-2 md:col-span-1 lg:row-start-2 lg:col-span-2 lg:h-32" loading="lazy" />
+          <img src="{{ url_for('static', filename='img/casa_3.jpg') }}" alt="" class="hidden w-full h-52 object-cover rounded-lg md:block lg:row-start-2 lg:col-span-2 lg:h-32" loading="lazy" />
+        </div>
+        <dl class="mt-4 text-xs font-medium flex items-center row-start-2 sm:mt-1 sm:row-start-3 md:mt-2.5 lg:row-start-2">
+          <dt class="sr-only">Reviews</dt>
+          <dd class="text-indigo-600 flex items-center dark:text-indigo-400">
+            <svg width="24" height="24" fill="none" aria-hidden="true" class="mr-1 stroke-current dark:stroke-indigo-500">
+              <path d="m12 5 2 5h5l-4 4 2.103 5L12 16l-5.103 3L9 14l-4-4h5l2-5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <span>4.89 <span class="text-slate-400 font-normal">(128)</span></span>
+          </dd>
+          <dt class="sr-only">Location</dt>
+          <dd class="flex items-center text-slate-400 dark:text-slate-500">
+            <svg width="2" height="2" aria-hidden="true" fill="currentColor" class="mx-3 text-slate-300">
+              <circle cx="1" cy="1" r="1" />
+            </svg>
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1 text-slate-400 dark:text-slate-500" aria-hidden="true">
+              <path d="M18 11.034C18 14.897 12 19 12 19s-6-4.103-6-7.966C6 7.655 8.819 5 12 5s6 2.655 6 6.034Z" />
+              <path d="M14 11a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z" />
+            </svg>Collingwood, VIC
+          </dd>
+        </dl>
+        <div class="mt-4 col-start-1 row-start-3 self-center sm:mt-0 sm:col-start-2 sm:row-start-2 sm:row-span-2 lg:mt-6 lg:col-start-1 lg:row-start-3 lg:row-end-4">
+          <a href="{{ url_for('promociones') }}"  class="bg-indigo-600 text-white text-sm leading-6 font-medium py-2 px-3 rounded-lg">Ver más</a>
+        </div>
+        <p class="mt-4 text-sm leading-6 col-start-1 sm:col-span-2 lg:mt-6 lg:row-start-4 lg:col-span-1 dark:text-slate-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor ultrices tristique. Sed quis magna sit amet turpis feugiat tristique.</p>
+      </div>
+    </section>
+
+    <div class="relative overflow-hidden bg-white">
+      <div class="pb-80 pt-16 sm:pb-40 sm:pt-24 lg:pb-48 lg:pt-40">
+        <div class="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
+          <div class="sm:max-w-lg">
+            <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Distintivas casas para que te adecues a tu estilo</h1>
+            <p class="mt-4 text-xl text-gray-500">Elige la casa que mejor se adapte a tus necesidades y preferencias.</p>
+          </div>
+        <div>
+            <div class="mt-10">
+              <!-- Decorative image grid -->
+              <div aria-hidden="true" class="pointer-events-none lg:absolute lg:inset-y-0 lg:mx-auto lg:w-full lg:max-w-7xl">
+                <div class="absolute transform sm:left-1/2 sm:top-0 sm:translate-x-8 lg:left-1/2 lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-8">
+                  <div class="flex items-center space-x-6 lg:space-x-8">
+                    <div class="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
+                      <div class="h-64 w-44 overflow-hidden rounded-lg sm:opacity-0 lg:opacity-100">
+                        <img src="{{ url_for('static', filename='img/playa.avif') }}" alt="" class="h-full w-full object-cover object-center" />
+                      </div>
+                      <div class="h-64 w-44 overflow-hidden rounded-lg">
+                        <img src="{{ url_for('static', filename='img/casa_5.jpg') }}" alt="" class="h-full w-full object-cover object-center" />
+                      </div>
+                    </div>
+                    <div class="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
+                      <div class="h-64 w-44 overflow-hidden rounded-lg">
+                        <img src="{{ url_for('static', filename='img/playa.avif') }}" alt="" class="h-full w-full object-cover object-center" />
+                      </div>
+                      <div class="h-64 w-44 overflow-hidden rounded-lg">
+                        <img src="{{ url_for('static', filename='img/casa1.webp') }}" alt="" class="h-full w-full object-cover object-center" />
+                      </div>
+                      <div class="h-64 w-44 overflow-hidden rounded-lg">
+                        <img src="{{ url_for('static', filename='img/casa_2.jpg') }}" alt="" class="h-full w-full object-cover object-center" />
+                      </div>
+                    </div>
+                    <div class="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
+                      <div class="h-64 w-44 overflow-hidden rounded-lg">
+                        <img src="{{ url_for('static', filename='img/casa_3.jpg') }}" alt="" class="h-full w-full object-cover object-center" />
+                      </div>
+                      <div class="h-64 w-44 overflow-hidden rounded-lg">
+                        <img src="{{ url_for('static', filename='img/casa_4.webp') }}" alt="" class="h-full w-full object-cover object-center" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section class="py-12">
+      <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+        <h2 class="text-3xl font-extrabold text-white dark:text-slate-100">Nuestras promociones</h2>
+      </div>
+      <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 flex lg:grid-cols-3 gap-4 mt-8 lg:mt-12">
+        <div class="bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden">
+          <div class="bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden">
+            <img src="{{ url_for('static', filename='img/casa_1.avif') }}" alt="" class="w-full h-48 object-cover" />
+            <div class="p-4">
+              <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-100">Casa en reserva</h3>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">2 cuartos · 1 baño · 1 cocina · 1 garage</p>
+              <div class="mt-2">
+                <span class="text-lg font-medium text-slate-900 dark:text-slate-100">$500</span>
+              </div>
+              <a class="bg-indigo-600 text-white text-sm leading-6 font-medium py-2 px-10 rounded-lg" href="{{ url_for('detalles') }}">Ver detalles</a>
+              <button class="bg-indigo-600 text-white text-sm leading-6 font-medium py-2 px-10 rounded-lg">Reservar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="bg-white">
+      <div class="max-w-screen-2xl text-white mx-auto px-4 sm:px-6 lg:px-8 mt-8">
+        <h2 class="font-extrabold tracking-tight text-gray-900 sm:text-6xl text-center w-full pt-16">Contacto</h2>
+        <form class="p-6">
+          <div class="mb-4">
+            <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Nombre</label>
+            <input type="text" id="name" name="name" class="appearance-none border rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Tu nombre" />
+          </div>
+          <div class="mb-4">
+            <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Correo Electrónico</label>
+            <input type="email" id="email" name="email" class="appearance-none border rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Tu correo electrónico" />
+          </div>
+          <div class="mb-6">
+            <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Mensaje</label>
+            <textarea id="message" name="message" class="appearance-none border rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" rows="5" placeholder="Escribe tu mensaje aquí"></textarea>
+          </div>
+          <div class="flex justify-end">
+            <button type="submit" class="bg-indigo-600 text-white font-bold py-2 px-4 w-44 rounded-md focus:outline-none focus:shadow-outline">Enviar</button>
+          </div>
+        </form>
+      </div>
+    </section>
+    {% include "footer/footer.html" %}
+  </div>
+{% endblock %}
