@@ -32,9 +32,9 @@ def procesar_cliente():
         
 
         cursor.close()
-        return jsonify({"ok":f"Gracias por tu comentario {nombre}"})
+        return jsonify({f"Gracias por tu comentario {nombre}"})
     except:
-        return jsonify({"error":f"Upps, tu momentario no nos sirvio"})
+        return jsonify({f"Upps, tu momentario no nos sirvio"})
 
 #"""""INSERCION DE DATOS""""""#"
 

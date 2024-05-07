@@ -23,6 +23,7 @@ document.getElementById("submit_btn").addEventListener("click", function() {
     })
     .then(data => {
         // Maneja la respuesta del servidor
+        console.log(data.ok)
         Swal.fire({
             title: "Good job!",
             text: data.ok,
