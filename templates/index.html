@@ -22,7 +22,7 @@
       <div class="absolute left-100 right-0 top-100 bottom-0 flex flex flex-col gap-4 p-4">
         <h2 class="text-2xl font-bold text-white dark:text-slate-100 text-4xl">Bienvenido a Mobiliaria</h2>
         <p class="text-sm leading-4 font-medium text-white dark:text-slate-400">Casas en ventas y alquiler para todo el mundo, en Moviliaria</p>
-        <a href="{{ url_for('promociones') }}"  class="bg-indigo-600 text-white text-sm leading-6 font-medium py-2 px-3">Reserva ahora</a>
+        <a href="{{ url_for('promociones') }}" class="bg-indigo-600 text-white text-sm leading-6 font-medium py-2 px-3">Reserva ahora</a>
       </div>
     </section>
 
@@ -57,7 +57,7 @@
           </dd>
         </dl>
         <div class="mt-4 col-start-1 row-start-3 self-center sm:mt-0 sm:col-start-2 sm:row-start-2 sm:row-span-2 lg:mt-6 lg:col-start-1 lg:row-start-3 lg:row-end-4">
-          <a href="{{ url_for('promociones') }}"  class="bg-indigo-600 text-white text-sm leading-6 font-medium py-2 px-3 rounded-lg">Ver más</a>
+          <a href="{{ url_for('promociones') }}" class="bg-indigo-600 text-white text-sm leading-6 font-medium py-2 px-3 rounded-lg">Ver más</a>
         </div>
         <p class="mt-4 text-sm leading-6 col-start-1 sm:col-span-2 lg:mt-6 lg:row-start-4 lg:col-span-1 dark:text-slate-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor ultrices tristique. Sed quis magna sit amet turpis feugiat tristique.</p>
       </div>
@@ -70,7 +70,7 @@
             <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Distintivas casas para que te adecues a tu estilo</h1>
             <p class="mt-4 text-xl text-gray-500">Elige la casa que mejor se adapte a tus necesidades y preferencias.</p>
           </div>
-        <div>
+          <div>
             <div class="mt-10">
               <!-- Decorative image grid -->
               <div aria-hidden="true" class="pointer-events-none lg:absolute lg:inset-y-0 lg:mx-auto lg:w-full lg:max-w-7xl">
@@ -115,22 +115,30 @@
       <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
         <h2 class="text-3xl font-extrabold text-white dark:text-slate-100">Nuestras promociones</h2>
       </div>
-      <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 flex lg:grid-cols-3 gap-4 mt-8 lg:mt-12">
-        <div class="bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden">
-          <div class="bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden">
-            <img src="{{ url_for('static', filename='img/casa_1.avif') }}" alt="" class="w-full h-48 object-cover" />
-            <div class="p-4">
-              <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-100">Casa en reserva</h3>
-              <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">2 cuartos · 1 baño · 1 cocina · 1 garage</p>
-              <div class="mt-2">
-                <span class="text-lg font-medium text-slate-900 dark:text-slate-100">$500</span>
-              </div>
-              <a class="bg-indigo-600 text-white text-sm leading-6 font-medium py-2 px-10 rounded-lg" href="{{ url_for('detalles') }}">Ver detalles</a>
-              <button class="bg-indigo-600 text-white text-sm leading-6 font-medium py-2 px-10 rounded-lg">Reservar</button>
+      <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 lg:mt-12">
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                {% for casa in casas_ventas %}
+                <div class="swiper-slide">
+                    <div class="bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden">
+                        <img src="{{ url_for('static', filename=casa[7]) }}" alt="" class="w-full h-48 object-cover" />
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-100">{{ casa[1] }}</h3>
+                            <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">{{ casa[2] }} cuartos · {{ casa[3] }} baño · {{ casa[4] }} cocina · {{ casa[5] }} garage</p>
+                            <div class="mt-2">
+                                <span class="text-lg font-medium text-slate-900 dark:text-slate-100">${{ casa[6] }}</span>
+                            </div>
+                            <a class="bg-indigo-600 text-white text-sm leading-6 font-medium py-2 px-10 rounded-lg" href="{{ url_for('detalles') }}">Ver detalles</a>
+                            <button class="bg-indigo-600 text-white text-sm leading-6 font-medium py-2 px-10 rounded-lg">Reservar</button>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
             </div>
-          </div>
+            <div class="swiper-pagination"></div>
         </div>
-      </div>
+    </div>
+    
     </section>
     <section class="bg-white">
       <div class="max-w-screen-2xl text-white mx-auto px-4 sm:px-6 lg:px-8 mt-8">
@@ -154,6 +162,6 @@
         </form>
       </div>
     </section>
-    {% include "footer/footer.html" %}
+    {% include 'footer/footer.html' %}
   </div>
 {% endblock %}

@@ -73,3 +73,8 @@ header  {
 .main-otros a span {
     overflow: hidden;
 }
+
+.swiper {
+    width:1180px;
+    height: 430px;
+  }

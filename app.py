@@ -6,7 +6,6 @@ app = Flask(__name__, template_folder='templates', static_folder='static')
 
 # Lista de rutas y funciones de manejo de vistas
 routes = [
-    ("/", "index", "index.html"),
     ("/promociones", "promociones", "promociones.html"),
     ("/detalles", "detalles", "detalles.html"),
     ("/planes", "planes", "planes.html"),
@@ -15,11 +14,22 @@ routes = [
     ("/contactenos", "contactenos", "contactenos.html")
 ]
 
+# Definición de las funciones de manejo de vistas
+
+
+
 # Registro dinámico de rutas en Flask
 for route, endpoint, template in routes:
     app.add_url_rule(route, endpoint, lambda template=template: render_template(template))
 
-
+@app.route("/")
+def index():
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM casas_ventas")
+    casas_ventas = cursor.fetchall()
+    cursor.close()
+    print(casas_ventas)
+    return render_template("index.html", casas_ventas=casas_ventas)
 
 @app.route("/submit_comment", methods=["POST"])
 def procesar_cliente():
@@ -32,9 +42,9 @@ def procesar_cliente():
         
 
         cursor.close()
-        return jsonify({f"Gracias por tu comentario {nombre}"})
+        return jsonify({"ok": f"Gracias por tu comentario {nombre}",})
     except:
-        return jsonify({f"Upps, tu momentario no nos sirvio"})
+        return jsonify({"error":"Upps, tu momentario no nos sirvio",})
 
 #"""""INSERCION DE DATOS""""""#"
 

@@ -19,13 +19,11 @@ document.getElementById("submit_btn").addEventListener("click", function() {
         if (!response.ok) {
             throw new Error("Error en la solicitud");
         }
-        return response.text();
+        return response.json();
     })
     .then(data => {
-        // Maneja la respuesta del servidor
-        console.log(data.ok)
         Swal.fire({
-            title: "Good job!",
+            title: "Excelente, estaremos en contacto contigo!",
             text: data.ok,
             icon: "success"
           });
