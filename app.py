@@ -31,6 +31,8 @@ def index():
     print(casas_ventas)
     return render_template("index.html", casas_ventas=casas_ventas)
 
+
+
 @app.route("/submit_comment", methods=["POST"])
 def procesar_cliente():
     try:
